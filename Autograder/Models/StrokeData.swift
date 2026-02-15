@@ -59,7 +59,7 @@ struct CharacterAttemptData: Codable, Identifiable {
     let definition: String
     let strokes: [StrokeData]
     let timestamp: Date
-    let sampleDistance: CGFloat
+    let pointsPerStroke: Int
     
     init(
         id: UUID = UUID(),
@@ -68,7 +68,7 @@ struct CharacterAttemptData: Codable, Identifiable {
         definition: String,
         strokes: [StrokeData],
         timestamp: Date = Date(),
-        sampleDistance: CGFloat
+        pointsPerStroke: Int
     ) {
         self.id = id
         self.flashcardId = flashcardId
@@ -76,7 +76,7 @@ struct CharacterAttemptData: Codable, Identifiable {
         self.definition = definition
         self.strokes = strokes
         self.timestamp = timestamp
-        self.sampleDistance = sampleDistance
+        self.pointsPerStroke = pointsPerStroke
     }
     
     var totalStrokes: Int {

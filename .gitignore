@@ -1,0 +1,10 @@
+# Security
+Secrets.xcconfig
+
+# OS X
+.DS_Store
+
+# Xcode
+build/
+*.xcuserstate
+DerivedData/

@@ -7,7 +7,9 @@ struct DrawingCanvasView: UIViewRepresentable {
     let onDrawingChanged: () -> Void
     
     func makeUIView(context: Context) -> PKCanvasView {
-        canvasView.tool = PKInkingTool(.pen, color: strokeColor, width: 8)
+        // Use marker - it doesn't adapt colors like pen does
+        let ink = PKInk(.marker, color: UIColor(red: 1, green: 1, blue: 1, alpha: 1))
+        canvasView.tool = PKInkingTool(ink: ink, width: 8)
         canvasView.drawingPolicy = .anyInput
         canvasView.backgroundColor = .clear
         canvasView.isOpaque = false
@@ -16,11 +18,8 @@ struct DrawingCanvasView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: PKCanvasView, context: Context) {
-        if let inkingTool = uiView.tool as? PKInkingTool {
-            if inkingTool.color != strokeColor {
-                uiView.tool = PKInkingTool(.pen, color: strokeColor, width: 8)
-            }
-        }
+        let ink = PKInk(.marker, color: UIColor(red: 1, green: 1, blue: 1, alpha: 1))
+        uiView.tool = PKInkingTool(ink: ink, width: 8)
     }
     
     func makeCoordinator() -> Coordinator {
@@ -36,6 +35,11 @@ struct DrawingCanvasView: UIViewRepresentable {
         
         func canvasViewDrawingDidChange(_ canvasView: PKCanvasView) {
             onDrawingChanged()
+        }
+        
+        func canvasViewDidBeginUsingTool(_ canvasView: PKCanvasView) {
+            let ink = PKInk(.marker, color: UIColor(red: 1, green: 1, blue: 1, alpha: 1))
+            canvasView.tool = PKInkingTool(ink: ink, width: 8)
         }
     }
 }
@@ -75,7 +79,7 @@ struct ChineseCharacterGrid: View {
     var body: some View {
         ZStack {
             Rectangle()
-                .fill(Color(.systemBackground))
+                .fill(Color(red: 0.12, green: 0.12, blue: 0.14))  // Dark background for white ink
                 .frame(width: size, height: size)
             
             Rectangle()

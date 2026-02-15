@@ -3,34 +3,42 @@ import PencilKit
 import CoreGraphics
 
 struct StrokeSampler {
-    let sampleDistance: CGFloat
+    let pointsPerStroke: Int
     
-    init(sampleDistance: CGFloat = 5.0) {
-        self.sampleDistance = sampleDistance
+    init(pointsPerStroke: Int = 50) {
+        self.pointsPerStroke = pointsPerStroke
     }
     
-    func samplePointsAlongDistance(from strokePath: PKStrokePath, startIndex: Int, endIndex: Int) -> [SampledPoint] {
+    func samplePoints(from strokePath: PKStrokePath, startIndex: Int, endIndex: Int) -> [SampledPoint] {
         guard endIndex > startIndex else { return [] }
         
+        let totalLength = calculateTotalLength(from: strokePath, startIndex: startIndex, endIndex: endIndex)
+        guard totalLength > 0 else {
+            let point = strokePath[startIndex]
+            return [SampledPoint(x: point.location.x, y: point.location.y)]
+        }
+        
+        let segmentLength = totalLength / CGFloat(pointsPerStroke - 1)
         var sampledPoints: [SampledPoint] = []
-        var accumulatedDistance: CGFloat = 0
         
         let firstPoint = strokePath[startIndex]
         sampledPoints.append(SampledPoint(x: firstPoint.location.x, y: firstPoint.location.y))
         
+        var accumulatedDistance: CGFloat = 0
+        var targetDistance = segmentLength
         var lastPoint = firstPoint.location
         
         for i in (startIndex + 1)...endIndex {
             let currentPoint = strokePath[i].location
-            let segmentDistance = distance(from: lastPoint, to: currentPoint)
+            let segmentDist = distance(from: lastPoint, to: currentPoint)
             
-            if segmentDistance == 0 { continue }
+            if segmentDist == 0 { continue }
             
-            var remainingSegment = segmentDistance
+            var remainingSegment = segmentDist
             var segmentStart = lastPoint
             
-            while accumulatedDistance + remainingSegment >= sampleDistance {
-                let distanceToNextSample = sampleDistance - accumulatedDistance
+            while accumulatedDistance + remainingSegment >= targetDistance && sampledPoints.count < pointsPerStroke {
+                let distanceToNextSample = targetDistance - accumulatedDistance
                 let ratio = distanceToNextSample / remainingSegment
                 
                 let interpolatedX = segmentStart.x + ratio * (currentPoint.x - segmentStart.x)
@@ -41,19 +49,32 @@ struct StrokeSampler {
                 segmentStart = CGPoint(x: interpolatedX, y: interpolatedY)
                 remainingSegment -= distanceToNextSample
                 accumulatedDistance = 0
+                targetDistance = segmentLength
             }
             
             accumulatedDistance += remainingSegment
             lastPoint = currentPoint
         }
         
-        let lastPathPoint = strokePath[endIndex]
-        let lastSampled = sampledPoints.last
-        if lastSampled == nil || distance(from: CGPoint(x: lastSampled!.x, y: lastSampled!.y), to: lastPathPoint.location) > 0.1 {
+        if sampledPoints.count < pointsPerStroke {
+            let lastPathPoint = strokePath[endIndex]
             sampledPoints.append(SampledPoint(x: lastPathPoint.location.x, y: lastPathPoint.location.y))
         }
         
         return sampledPoints
+    }
+    
+    private func calculateTotalLength(from strokePath: PKStrokePath, startIndex: Int, endIndex: Int) -> CGFloat {
+        var totalLength: CGFloat = 0
+        var lastPoint = strokePath[startIndex].location
+        
+        for i in (startIndex + 1)...endIndex {
+            let currentPoint = strokePath[i].location
+            totalLength += distance(from: lastPoint, to: currentPoint)
+            lastPoint = currentPoint
+        }
+        
+        return totalLength
     }
     
     private func distance(from p1: CGPoint, to p2: CGPoint) -> CGFloat {

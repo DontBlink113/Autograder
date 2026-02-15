@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1000001229B0001 /* CharacterBetaStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000011229B0001 /* CharacterBetaStats.swift */; };
+		B1000002229B0001 /* ProgressPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000012229B0001 /* ProgressPanelView.swift */; };
+		B1000003229B0001 /* ExcelModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1000013229B0001 /* ExcelModeView.swift */; };
+		01E3C9222F420ADC000F58D7 /* GrammarPracticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3C9212F420ADC000F58D7 /* GrammarPracticeView.swift */; };
+		01E3C9242F420AEB000F58D7 /* ChatGPTAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3C9232F420AEB000F58D7 /* ChatGPTAPI.swift */; };
+		01E3C9262F421172000F58D7 /* PracticeStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3C9252F421172000F58D7 /* PracticeStats.swift */; };
+		01E3C92A2F42212F000F58D7 /* DigitalInkRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3C9292F42212F000F58D7 /* DigitalInkRecognizer.swift */; };
 		A1000001229A0001 /* AutograderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000011229A0001 /* AutograderApp.swift */; };
 		A1000002229A0001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000012229A0001 /* ContentView.swift */; };
 		A1000003229A0001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000013229A0001 /* Assets.xcassets */; };
@@ -17,9 +24,22 @@
 		A1000008229A0001 /* DrawingCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000018229A0001 /* DrawingCanvasView.swift */; };
 		A1000009229A0001 /* StrokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000019229A0001 /* StrokeData.swift */; };
 		A100000A229A0001 /* StrokeSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001A229A0002 /* StrokeSampler.swift */; };
+		A100000B229A0003 /* ValidationDataset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001B229A0003 /* ValidationDataset.swift */; };
+		A100000C229A0003 /* StrokeAssignmentSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001C229A0003 /* StrokeAssignmentSheet.swift */; };
+		A100000D229A0003 /* ValidationDatasetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001D229A0003 /* ValidationDatasetView.swift */; };
+		A100000E229A0003 /* GraphicsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A100001E229A0003 /* GraphicsLoader.swift */; };
+		A100000F229A0003 /* graphics.txt in Resources */ = {isa = PBXBuildFile; fileRef = A100001F229A0003 /* graphics.txt */; };
+		A1000010229A0004 /* AutograderAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000020229A0004 /* AutograderAPI.swift */; };
+		A1000011229A0005 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000021229A0005 /* AppTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01E3C91F2F4206EE000F58D7 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		01E3C9202F420876000F58D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		01E3C9212F420ADC000F58D7 /* GrammarPracticeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarPracticeView.swift; sourceTree = "<group>"; };
+		01E3C9232F420AEB000F58D7 /* ChatGPTAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTAPI.swift; sourceTree = "<group>"; };
+		01E3C9252F421172000F58D7 /* PracticeStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeStats.swift; sourceTree = "<group>"; };
+		01E3C9292F42212F000F58D7 /* DigitalInkRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalInkRecognizer.swift; sourceTree = "<group>"; };
 		A1000010229A0001 /* Autograder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autograder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1000011229A0001 /* AutograderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutograderApp.swift; sourceTree = "<group>"; };
 		A1000012229A0001 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -31,6 +51,16 @@
 		A1000018229A0001 /* DrawingCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingCanvasView.swift; sourceTree = "<group>"; };
 		A1000019229A0001 /* StrokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeData.swift; sourceTree = "<group>"; };
 		A100001A229A0002 /* StrokeSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeSampler.swift; sourceTree = "<group>"; };
+		A100001B229A0003 /* ValidationDataset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationDataset.swift; sourceTree = "<group>"; };
+		A100001C229A0003 /* StrokeAssignmentSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeAssignmentSheet.swift; sourceTree = "<group>"; };
+		A100001D229A0003 /* ValidationDatasetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationDatasetView.swift; sourceTree = "<group>"; };
+		A100001E229A0003 /* GraphicsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsLoader.swift; sourceTree = "<group>"; };
+		A100001F229A0003 /* graphics.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = graphics.txt; sourceTree = "<group>"; };
+		A1000020229A0004 /* AutograderAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutograderAPI.swift; sourceTree = "<group>"; };
+		A1000021229A0005 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		B1000011229B0001 /* CharacterBetaStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBetaStats.swift; sourceTree = "<group>"; };
+		B1000012229B0001 /* ProgressPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressPanelView.swift; sourceTree = "<group>"; };
+		B1000013229B0001 /* ExcelModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelModeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,21 +74,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A1E10D3A33DC00B28DD2D92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A1000020229A0001 = {
 			isa = PBXGroup;
 			children = (
-				A1000021229A0001 /* FlashcardApp */,
+				01E3C91F2F4206EE000F58D7 /* Secrets.xcconfig */,
+				A1000021229A0001 /* Autograder */,
 				A1000022229A0001 /* Products */,
+				7A1E10D3A33DC00B28DD2D92 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		A1000021229A0001 /* Autograder */ = {
 			isa = PBXGroup;
 			children = (
+				01E3C9202F420876000F58D7 /* Info.plist */,
 				A1000011229A0001 /* AutograderApp.swift */,
 				A1000023229A0001 /* Views */,
 				A1000024229A0001 /* Models */,
+				A1000025229A0005 /* Theme */,
 				A1000013229A0001 /* Assets.xcassets */,
+				A100001F229A0003 /* graphics.txt */,
 			);
 			path = Autograder;
 			sourceTree = "<group>";
@@ -74,10 +116,15 @@
 		A1000023229A0001 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				01E3C9212F420ADC000F58D7 /* GrammarPracticeView.swift */,
+				B1000012229B0001 /* ProgressPanelView.swift */,
+				B1000013229B0001 /* ExcelModeView.swift */,
 				A1000012229A0001 /* ContentView.swift */,
 				A1000016229A0001 /* FlashcardModeView.swift */,
 				A1000017229A0001 /* MakeFlashcardsView.swift */,
 				A1000018229A0001 /* DrawingCanvasView.swift */,
+				A100001C229A0003 /* StrokeAssignmentSheet.swift */,
+				A100001D229A0003 /* ValidationDatasetView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,12 +132,27 @@
 		A1000024229A0001 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				01E3C9292F42212F000F58D7 /* DigitalInkRecognizer.swift */,
+				01E3C9252F421172000F58D7 /* PracticeStats.swift */,
+				B1000011229B0001 /* CharacterBetaStats.swift */,
+				01E3C9232F420AEB000F58D7 /* ChatGPTAPI.swift */,
 				A1000014229A0001 /* Flashcard.swift */,
 				A1000015229A0001 /* FlashcardStore.swift */,
 				A1000019229A0001 /* StrokeData.swift */,
 				A100001A229A0002 /* StrokeSampler.swift */,
+				A100001B229A0003 /* ValidationDataset.swift */,
+				A100001E229A0003 /* GraphicsLoader.swift */,
+				A1000020229A0004 /* AutograderAPI.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A1000025229A0005 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A1000021229A0005 /* AppTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1000003229A0001 /* Assets.xcassets in Resources */,
+				A100000F229A0003 /* graphics.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +225,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1000001229B0001 /* CharacterBetaStats.swift in Sources */,
+				B1000002229B0001 /* ProgressPanelView.swift in Sources */,
+				B1000003229B0001 /* ExcelModeView.swift in Sources */,
 				A1000001229A0001 /* AutograderApp.swift in Sources */,
+				01E3C9222F420ADC000F58D7 /* GrammarPracticeView.swift in Sources */,
 				A1000002229A0001 /* ContentView.swift in Sources */,
 				A1000004229A0001 /* Flashcard.swift in Sources */,
 				A1000005229A0001 /* FlashcardStore.swift in Sources */,
@@ -171,6 +238,15 @@
 				A1000008229A0001 /* DrawingCanvasView.swift in Sources */,
 				A1000009229A0001 /* StrokeData.swift in Sources */,
 				A100000A229A0001 /* StrokeSampler.swift in Sources */,
+				A100000B229A0003 /* ValidationDataset.swift in Sources */,
+				A100000C229A0003 /* StrokeAssignmentSheet.swift in Sources */,
+				01E3C9262F421172000F58D7 /* PracticeStats.swift in Sources */,
+				01E3C9242F420AEB000F58D7 /* ChatGPTAPI.swift in Sources */,
+				A100000D229A0003 /* ValidationDatasetView.swift in Sources */,
+				01E3C92A2F42212F000F58D7 /* DigitalInkRecognizer.swift in Sources */,
+				A100000E229A0003 /* GraphicsLoader.swift in Sources */,
+				A1000010229A0004 /* AutograderAPI.swift in Sources */,
+				A1000011229A0005 /* AppTheme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +255,7 @@
 /* Begin XCBuildConfiguration section */
 		A1000040229A0001 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E3C91F2F4206EE000F58D7 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -242,6 +319,7 @@
 		};
 		A1000041229A0001 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E3C91F2F4206EE000F58D7 /* Secrets.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -298,14 +376,16 @@
 		};
 		A1000042229A0001 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E3C91F2F4206EE000F58D7 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 39GDW5HDU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Autograder/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Flashcards;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -329,14 +409,16 @@
 		};
 		A1000043229A0001 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01E3C91F2F4206EE000F58D7 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 39GDW5HDU4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Autograder/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Flashcards;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
